@@ -4,12 +4,12 @@
 %bcond_without	static_libs	# static libraries
 %bcond_without	jansson		# JSON parsing support (via jansson)
 %bcond_without	mxml		# XML parsing support (via mxml)
-#
+
 Summary:	Netfilter nf_tables infrastructure library
 Summary(pl.UTF-8):	Biblioteka infrastruktury nf_tables netfiltra
 Name:		libnftnl
 Version:	1.0.3
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://www.netfilter.org/projects/libnftnl/files/%{name}-%{version}.tar.bz2
@@ -69,6 +69,9 @@ Statyczna biblioteka libnftnl.
 Summary:	libnftnl API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki libnftnl
 Group:		Documentation
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 API and internal documentation for libnftnl library.
