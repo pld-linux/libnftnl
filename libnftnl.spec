@@ -3,17 +3,16 @@
 %bcond_without	apidocs		# API documentation
 %bcond_without	static_libs	# static libraries
 %bcond_without	jansson		# JSON parsing support (via jansson)
-%bcond_without	mxml		# XML parsing support (via mxml)
 
 Summary:	Netfilter nf_tables infrastructure library
 Summary(pl.UTF-8):	Biblioteka infrastruktury nf_tables netfiltra
 Name:		libnftnl
-Version:	1.0.6
+Version:	1.0.7
 Release:	1
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://www.netfilter.org/projects/libnftnl/files/%{name}-%{version}.tar.bz2
-# Source0-md5:	6d7f9f161538ca7efd535dcc70caf964
+# Source0-md5:	82183867168eb6644926c48b991b8aac
 URL:		http://www.netfilter.org/projects/libnftnl/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1.6
@@ -22,10 +21,8 @@ BuildRequires:	automake >= 1.6
 BuildRequires:	libmnl-devel >= 1.0.0
 BuildRequires:	libtool >= 2:2
 BuildRequires:	linux-libc-headers >= 7:3.14
-%{?with_mxml:BuildRequires:	mxml-devel >= 2.6}
 %{?with_jansson:Requires:	jansson >= 2.3}
 Requires:	libmnl >= 1.0.0
-%{?with_mxml:Requires:	mxml >= 2.6}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -91,8 +88,7 @@ Dokumentacja API biblioteki libnftnl.
 %configure \
 	--disable-silent-rules \
 	%{?with_static_libs:--enable-static} \
-	%{?with_jansson:--with-json-parsing} \
-	%{?with_mxml:--with-xml-parsing}
+	%{?with_jansson:--with-json-parsing}
 
 %{__make}
 
