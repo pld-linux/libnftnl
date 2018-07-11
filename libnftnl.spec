@@ -18,11 +18,11 @@ BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1.6
 %{?with_apidocs:BuildRequires:	doxygen}
 %{?with_jansson:BuildRequires:	jansson-devel >= 2.3}
-BuildRequires:	libmnl-devel >= 1.0.0
+BuildRequires:	libmnl-devel >= 1.0.3
 BuildRequires:	libtool >= 2:2
 BuildRequires:	linux-libc-headers >= 7:3.14
 %{?with_jansson:Requires:	jansson >= 2.3}
-Requires:	libmnl >= 1.0.0
+Requires:	libmnl >= 1.0.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -42,7 +42,7 @@ Summary:	Header files for libnftnl library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libnftnl
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	libmnl-devel >= 1.0.0
+Requires:	libmnl-devel >= 1.0.3
 
 %description devel
 Header files for libnftnl library.
