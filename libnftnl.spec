@@ -2,26 +2,23 @@
 # Conditional build:
 %bcond_without	apidocs		# API documentation
 %bcond_without	static_libs	# static libraries
-%bcond_without	jansson		# JSON parsing support (via jansson)
 
 Summary:	Netfilter nf_tables infrastructure library
 Summary(pl.UTF-8):	Biblioteka infrastruktury nf_tables netfiltra
 Name:		libnftnl
-Version:	1.1.1
+Version:	1.1.2
 Release:	1
 License:	GPL v2+
 Group:		Libraries
 Source0:	https://netfilter.org/projects/libnftnl/files/%{name}-%{version}.tar.bz2
-# Source0-md5:	c2d35f59cef2d142d5fa19e456b4afdc
+# Source0-md5:	14093a238d5025d4a452e6d1cef88c58
 URL:		https://netfilter.org/projects/libnftnl/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1.6
 %{?with_apidocs:BuildRequires:	doxygen}
-%{?with_jansson:BuildRequires:	jansson-devel >= 2.3}
 BuildRequires:	libmnl-devel >= 1.0.3
 BuildRequires:	libtool >= 2:2
 BuildRequires:	linux-libc-headers >= 7:3.14
-%{?with_jansson:Requires:	jansson >= 2.3}
 Requires:	libmnl >= 1.0.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -87,8 +84,7 @@ Dokumentacja API biblioteki libnftnl.
 %{__automake}
 %configure \
 	--disable-silent-rules \
-	%{?with_static_libs:--enable-static} \
-	%{?with_jansson:--with-json-parsing}
+	%{?with_static_libs:--enable-static}
 
 %{__make}
 
@@ -112,7 +108,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libnftnl.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libnftnl.so.7
+%attr(755,root,root) %ghost %{_libdir}/libnftnl.so.11
 
 %files devel
 %defattr(644,root,root,755)
