@@ -6,21 +6,21 @@
 Summary:	Netfilter nf_tables infrastructure library
 Summary(pl.UTF-8):	Biblioteka infrastruktury nf_tables netfiltra
 Name:		libnftnl
-Version:	1.1.6
+Version:	1.1.7
 Release:	1
 License:	GPL v2+
 Group:		Libraries
 Source0:	https://netfilter.org/projects/libnftnl/files/%{name}-%{version}.tar.bz2
-# Source0-md5:	0ddf6d952835f426f202984bbc0c58a6
+# Source0-md5:	e890bf6bcfcb130753ef432a177120bb
 URL:		https://netfilter.org/projects/libnftnl/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1.6
 %{?with_apidocs:BuildRequires:	doxygen}
-BuildRequires:	libmnl-devel >= 1.0.3
+BuildRequires:	libmnl-devel >= 1.0.4
 BuildRequires:	libtool >= 2:2
 BuildRequires:	linux-libc-headers >= 7:3.14
 BuildRequires:	pkgconfig
-Requires:	libmnl >= 1.0.3
+Requires:	libmnl >= 1.0.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -40,7 +40,7 @@ Summary:	Header files for libnftnl library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libnftnl
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	libmnl-devel >= 1.0.3
+Requires:	libmnl-devel >= 1.0.4
 
 %description devel
 Header files for libnftnl library.
