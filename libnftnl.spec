@@ -6,12 +6,12 @@
 Summary:	Netfilter nf_tables infrastructure library
 Summary(pl.UTF-8):	Biblioteka infrastruktury nf_tables netfiltra
 Name:		libnftnl
-Version:	1.1.7
+Version:	1.1.8
 Release:	1
 License:	GPL v2+
 Group:		Libraries
 Source0:	https://netfilter.org/projects/libnftnl/files/%{name}-%{version}.tar.bz2
-# Source0-md5:	e890bf6bcfcb130753ef432a177120bb
+# Source0-md5:	b2b1623a281eb1f3287b490e22673369
 URL:		https://netfilter.org/projects/libnftnl/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1.6
@@ -20,6 +20,7 @@ BuildRequires:	libmnl-devel >= 1.0.4
 BuildRequires:	libtool >= 2:2
 BuildRequires:	linux-libc-headers >= 7:3.14
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.752
 Requires:	libmnl >= 1.0.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -64,9 +65,7 @@ Statyczna biblioteka libnftnl.
 Summary:	libnftnl API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki libnftnl
 Group:		Documentation
-%if "%{_rpmversion}" >= "5"
-BuildArch:	noarch
-%endif
+%{?noarchpackage}
 
 %description apidocs
 API and internal documentation for libnftnl library.
