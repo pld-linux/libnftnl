@@ -65,7 +65,7 @@ Statyczna biblioteka libnftnl.
 Summary:	libnftnl API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki libnftnl
 Group:		Documentation
-%{?noarchpackage}
+BuildArch:	noarch
 
 %description apidocs
 API and internal documentation for libnftnl library.
