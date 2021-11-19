@@ -20,6 +20,7 @@ BuildRequires:	libmnl-devel >= 1.0.4
 BuildRequires:	libtool >= 2:2
 BuildRequires:	linux-libc-headers >= 7:3.14
 BuildRequires:	pkgconfig
+BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpmbuild(macros) >= 1.752
 Requires:	libmnl >= 1.0.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
