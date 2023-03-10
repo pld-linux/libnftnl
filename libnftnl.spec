@@ -6,12 +6,12 @@
 Summary:	Netfilter nf_tables infrastructure library
 Summary(pl.UTF-8):	Biblioteka infrastruktury nf_tables netfiltra
 Name:		libnftnl
-Version:	1.2.4
+Version:	1.2.5
 Release:	1
 License:	GPL v2+
 Group:		Libraries
-Source0:	https://netfilter.org/projects/libnftnl/files/%{name}-%{version}.tar.bz2
-# Source0-md5:	a7c7fb7faf67d8a053be8c263f48a9c0
+Source0:	https://netfilter.org/projects/libnftnl/files/%{name}-%{version}.tar.xz
+# Source0-md5:	a7ed6af6f68636ad2effc053d7836434
 URL:		https://netfilter.org/projects/libnftnl/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1.6
@@ -22,6 +22,8 @@ BuildRequires:	linux-libc-headers >= 7:3.14
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpmbuild(macros) >= 1.752
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 Requires:	libmnl >= 1.0.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
