@@ -6,12 +6,12 @@
 Summary:	Netfilter nf_tables infrastructure library
 Summary(pl.UTF-8):	Biblioteka infrastruktury nf_tables netfiltra
 Name:		libnftnl
-Version:	1.3.1
+Version:	1.3.2
 Release:	1
 License:	GPL v2+
 Group:		Libraries
 Source0:	https://netfilter.org/projects/libnftnl/files/%{name}-%{version}.tar.xz
-# Source0-md5:	ab1a894717469fb1d45d4c8ca0557fb6
+# Source0-md5:	eb98e6c483ed16f08f4e81e7d279df5d
 URL:		https://netfilter.org/projects/libnftnl/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1.6
@@ -91,7 +91,9 @@ Dokumentacja API biblioteki libnftnl.
 
 %{__make}
 
-%{?with_apidocs:doxygen doxygen.cfg}
+%if %{with apidocs}
+doxygen doxygen.cfg
+%endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -110,12 +112,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libnftnl.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libnftnl.so.11
+%{_libdir}/libnftnl.so.*.*.*
+%ghost %{_libdir}/libnftnl.so.11
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libnftnl.so
+%{_libdir}/libnftnl.so
 %{_includedir}/libnftnl
 %{_pkgconfigdir}/libnftnl.pc
 
